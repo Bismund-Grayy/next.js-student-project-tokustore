@@ -6,8 +6,8 @@ import "./application.css";
 import LoginComponent from "./components/login";
 import RegisterComponent from "./components/register";
 import Link from "next/link";
-//import Main from "./user-components/main";
-//import { supabase } from "../../../utils/supabase";
+import Main from "./user-components/main";
+import { supabase } from "./../../utils/supabase";
 
 // This page is for users to login or register
 
@@ -16,7 +16,7 @@ const LogRegPage = () => {
   const [view, setView] = useState<'login' | 'register' | 'main'>('login');
   // loading state to prevent flickering while checking for existing sessions
   const [loading, setLoading] = useState(true);
-  /*
+  
   useEffect(() => {
     // Initial check for an existing user session on page load
     const checkUser = async () => {
@@ -46,7 +46,7 @@ const LogRegPage = () => {
   // Show loading indicator while session state is being determined
   if (loading) {
     return <main>Loading...</main>;
-  }*/
+  }
 
   return (
     <main>
@@ -58,9 +58,10 @@ const LogRegPage = () => {
       {view === 'register' && (
         <RegisterComponent onSwitch={() => setView('login')} />
       )}
-      {view === 'main'
-        //<Main />
-      }
+      {view === 'main' && (
+        <Main />
+      )}
+
     </main>
   );
 };

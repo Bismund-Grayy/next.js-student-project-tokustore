@@ -32,7 +32,7 @@ const LoginComponent: React.FC<LoginProps> = ({ onSwitch, onLogin }) => {
       setError(error.message);
       setLoading(false);
     } else {
-      // Success: Call parent handler to switch to Main view
+      // Success: Call parent handler to switch to mainapp
       
       onLogin();
     }
@@ -55,7 +55,7 @@ const LoginComponent: React.FC<LoginProps> = ({ onSwitch, onLogin }) => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password hey!:</label>
           <input
             type="password"
             id="password"
