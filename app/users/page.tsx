@@ -50,7 +50,7 @@ const LogRegPage = () => {
 
   return (
     <main>
-      <h1>MatchAI</h1>
+      
       {/* Conditionally render login form, register form, or the main hub based on 'view' state */}
       {view === 'login' && (
         <LoginComponent onSwitch={() => setView('register')} onLogin={() => setView('main')} />
