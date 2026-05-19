@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { supabase, logActivity } from "../../../utils/supabase";
+import { supabase } from "../../../utils/supabase";
 
 interface LoginProps {
   onSwitch: () => void;
@@ -33,9 +33,7 @@ const LoginComponent: React.FC<LoginProps> = ({ onSwitch, onLogin }) => {
       setLoading(false);
     } else {
       // Success: Call parent handler to switch to Main view
-      if (data.user) {
-        await logActivity(data.user.id, "login", { email });
-      }
+      
       onLogin();
     }
   };
